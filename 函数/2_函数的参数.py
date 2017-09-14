@@ -131,3 +131,5 @@ person3('KiKi', 24, job="teacher")  # KiKi 24 Beijing teacher
 # 组合参数
 # 参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。
 # 对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的
+# *args是可变参数，args接收的是一个tuple
+# **kw是关键字参数，kw接收的是一个dict
