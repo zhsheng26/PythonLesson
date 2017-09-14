@@ -19,6 +19,8 @@ print(num_list[10:20])
 print(num_list[:10:2])  # [0, 2, 4, 6, 8]
 # 所有数，每5个取一个：
 print(num_list[::5])
+# 倒序
+print(num_list[::-1])
 # 只写[:]就可以原样复制一个list
 print(num_list[:])
 
