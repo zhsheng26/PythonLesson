@@ -88,13 +88,22 @@ class Chain(object):
         self._path = path
 
     def __getattr__(self, path):
+        print('=======')
         return Chain('%s/%s' % (self._path, path))
 
     def __str__(self):
         return self._path
 
+    def __call__(self, attr):
+        return Chain('%s/%s' % (self._path, attr))
+
     __repr__ = __str__
 
 
-print(Chain().status.user.timeline.list)  # /status/user/timeline/list
-# print(Chain().users('michael').repos)  # /users/:user/repos
+# print(Chain().status.user.timeline.list)  # /status/user/timeline/list
+print(Chain().users('michael').repos)  # /users/:user/repos
+
+# 任何类，只需要定义一个__call__()方法，就可以直接对实例进行调用
+# 我们需要判断一个对象是否能被调用，能被调用的对象就是一个Callable对象
+print(callable(max))
+print(callable('str'))
