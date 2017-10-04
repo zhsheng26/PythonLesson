@@ -38,6 +38,10 @@ def fib2(max):
 
 
 fib_generator = fib2(5)
+print('=================')
+print(next(fib_generator))
+print(next(fib_generator))
+print(next(fib_generator))
 print(next(fib_generator))
 print('=================')
 # 用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中
@@ -52,3 +56,23 @@ while True:
     except StopIteration as e:
         print('return value:', e.value)
         break
+
+print('=================')
+
+
+def yield_t(n):
+    for i in range(n):
+        yield call(i)
+        print("i=", i)
+        # 做一些其它的事情
+    print("do something.")
+    print("end.")
+
+
+def call(i):
+    return i * 2
+
+
+# 使用for循环
+for i in yield_t(5):
+    print(i, ",")
