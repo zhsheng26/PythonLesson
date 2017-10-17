@@ -25,10 +25,12 @@ MORNING = 'morning'
 NOON = 'noon'
 EVENING = 'evening'
 
+USER_NAME = 'zhangsheng@timeface.cn'
+
 
 def login_user():
     login_url = base_url + 'auth/login'
-    login_param = {'email': 'zhangsheng@timeface.cn', 'password': 'MTExMTEx'}
+    login_param = {'email': USER_NAME, 'password': 'MTExMTEx'}
     r = session.get(login_url, params=login_param)
     return r.status_code == 200
 
@@ -45,7 +47,7 @@ def query_check_state(key):
 
 def get_token():
     token_url = "http://tat.tfdom.com/api/v1/token"
-    token_req = requests.get(token_url, params={'email': 'zhangsheng@timeface.cn'})
+    token_req = requests.get(token_url, params={'email': USER_NAME})
     return json.loads(token_req.text)['token']
 
 
