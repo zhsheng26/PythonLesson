@@ -28,3 +28,12 @@ with pick_write_json as wj:
 # json反序列化
 json_str = '{"age": 20, "score": 88, "name": "Bob"}'
 print(type(json.loads(json_str)))
+
+
+# json进阶
+
+class Student(object):
+    def __init__(self, name, age, score):
+        self.name = name
+        self.age = age
+        self.score = score

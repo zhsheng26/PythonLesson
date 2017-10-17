@@ -103,8 +103,6 @@ def start_sign():
         sign_morning = get_should_sign_time(8, 0)  # 早上
         sign_noon = get_should_sign_time(13, 0)  # 中午
         sign_evening = get_should_sign_time(18, 0)  # 晚上
-        print('current_time = %s ;sign_morning = %s ;sign_noon = %s ;sign_evening = %s'
-              % (current_time, sign_morning, sign_noon, sign_evening))
         if current_time == sign_morning:
             sign(MORNING)
         elif current_time == sign_noon:
@@ -112,7 +110,7 @@ def start_sign():
         elif current_time == sign_evening:
             sign(EVENING)
         else:
-            print('还没到打卡时间呢。。。')
+            print('当前时间：%s\n等待打卡...' % datetime.today().__format__('%Y-%m-%d %H:%M:%S'))
     run_sign()
 
 
