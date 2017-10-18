@@ -85,10 +85,10 @@ def get_should_sign_time(hour, minute):
 
 def start_sign():
     morning_h = 8
-    morning_m = 10
+    morning_m = 6
 
     noon_h = 12
-    noon_m = 33
+    noon_m = 13
 
     evening_h = 18
     evening_m = 10
@@ -102,7 +102,7 @@ def start_sign():
         sign_noon = get_should_sign_time(noon_h, noon_m)  # 中午
         if weekday == calendar.TUESDAY or weekday == calendar.THURSDAY:
             evening_h = 21
-            evening_m = 12
+            evening_m = 8
         sign_evening = get_should_sign_time(evening_h, evening_m)  # 晚上
         if current_time == sign_morning:
             sign(MORNING)
