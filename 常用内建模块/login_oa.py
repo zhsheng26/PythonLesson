@@ -69,7 +69,7 @@ def sign(key):
             flag = 3
         sign_res = session.post(sign_url, data={'flag': flag}, headers=headers)
         if sign_res.status_code == 200:
-            print('==*=====*======*==')
+            print('==*=====%s======*==' % sign_res.text)
             query()
 
 
@@ -87,11 +87,11 @@ def start_sign():
     morning_h = 8
     morning_m = 6
 
-    noon_h = 12
-    noon_m = 13
+    noon_h = 8
+    noon_m = 57
 
     evening_h = 18
-    evening_m = 10
+    evening_m = 8
     # 星期天不打卡
     weekday = datetime.today().weekday()
     if weekday == calendar.SUNDAY:
@@ -114,7 +114,7 @@ def start_sign():
 
 
 def run_sign():
-    Timer(1 * 30, start_sign).start()
+    Timer(1 * 10, start_sign).start()
 
 
 def query():
