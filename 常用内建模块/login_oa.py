@@ -85,7 +85,7 @@ def get_should_sign_time(hour, minute):
 
 def start_sign():
     morning_h = 8
-    morning_m = 6
+    morning_m = 20
 
     noon_h = 12
     noon_m = 7
